@@ -1,0 +1,56 @@
+{
+		"properties": {
+			"id": {
+				"type": "long"
+			},
+			"title": {
+				"type": "text",
+				"analyzer": "ik_max_word",
+				"search_analyzer": "ik_smart",
+				"fields": {
+					"keyword": {
+						"ignore_above": 256,
+						"type": "keyword"
+					}
+				}
+			},
+			"content": {
+				"type": "text",
+				"analyzer": "ik_max_word",
+				"search_analyzer": "ik_smart",
+				"fields": {
+					"keyword": {
+						"ignore_above": 256,
+						"type": "keyword"
+					}
+				}
+			},
+			"classify": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"ignore_above": 256,
+						"type": "keyword"
+					}
+				}
+			},
+			"auth": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"ignore_above": 256,
+						"type": "keyword"
+					}
+				}
+			},
+			"tag": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"ignore_above": 256,
+						"type": "keyword"
+					}
+				}
+			}
+		}
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="get" action="/search">
+<input type="text" name="recode">
+<input type="hidden" name="pageindex" value="1">
+<input type="hidden" name="pagesize" value="20">
+<br>
+<input type="radio" name="source" checked>全文搜索
+<!--<input type="radio" name="source" disabled="true" checked>tag  -->
+<br>
+<!-- <input type="radio" name="db" disabled="true" checked>mysql -->
+<br>
+<label><input type="radio" name="mode" value="match" disabled="disabled">小严格模式</label>
+<br>
+<label><input type="radio" name="mode" value="match" checked>中严格模式</label>
+<br>
+<label><input type="radio" name="mode" value="phrase" >大严格模式(单关键词，较慢)</label>
+<br>
+<label><input type="radio" name="mode" value="term">超大严格模式(不建议)</label>
+<br>
+<input type="submit" value="Submit">
+</form>
+<br>
+<br>
+<br>
+中等严格模式(快)：
+<br>
+分词后搜索，如"中华人民共和国"会被分成"中华"，"华人"，"人民"，"共和"，"国"等词，只要文章中包含任意一个词，即命中。
+<br><br>
+大严格模式(慢)：<br>
+不分词：只有包含完整的关键词才会命中
+<br><br>
+超大严格模式(超快)：<br>
+准确率较低，搜人名之类的可能无法命中
+<br><br>
+</body>
+</html>

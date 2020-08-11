@@ -1,0 +1,10 @@
+spring:          #表示该配置直接为Spring容器负责处理
+  thymeleaf:
+    cache: false # 开发时关闭缓存,不然没法看到实时页面
+    mode: HTML # 用非严格的 HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  elasticsearch:
+    rest:
+      uris: localhost:9200

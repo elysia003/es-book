@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<div style="position:fixed;width:960px;height:30px;text-align:center;top:0px;font-size:100px"><a href="/">返回首页</a></div><body>
+共找到：[[${res.count}]]条数据
+<br>
+此页耗时：[[${res.runtime/1000}]]s
+<br>
+serachAnalyze:ik_smart
+<br>
+    <table>
+        <tr th:each="i:${res.list}">
+            <a th:href="'/v/'+${i.id}" th:text="${#strings.replace(i.content.title,'.txt','')}"/></a>
+            <br>
+            <div style="letter-spacing:0px;font-size:8px;width:800px;">
+            	[(${#strings.replace(i.highlightFields.content,'　','')})]
+            </div>
+          <br>
+        </tr>
+    </table>
+          第[[${res.nowIndex}]]页
+    <tr th:each="i:${#numbers.sequence(1,res.pageSum)}" >
+        <a th:href="'/search?recode='+${res.key}+'&pageindex='+${i}+'&pagesize='+${res.pageSize}+'&mode='+${res.mode}" th:text="${i}"></a>
+    </tr>
+    <a th:href="'/search?recode='+${res.key}+'&pageindex='+${res.nowIndex+1 lt res.pageSum?res.nowIndex+1:res.pageSum}+'&pagesize='+${res.pageSize}+'&mode='+${res.mode}" th:text="下一页"></a>
+</body>
+</body>
+</html>
